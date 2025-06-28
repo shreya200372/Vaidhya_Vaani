@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-section d-flex align-items-center">
+    <div class="container hero-content">
+        <div class="row align-items-center">
+            <div class="col-lg-6 fade-in">
+                <div class="hero-text mb-5">
+                    <h1 class="display-3 fw-bold text-white mb-4">
+                        Vaidhya-vani
+                        <span class="d-block" style="font-size: 0.6em; color: var(--healing-green);">वैद्य वाणी</span>
+                    </h1>
+                    <p class="lead text-white mb-4" style="font-size: 1.3rem;">
+                        Experience the future of healthcare with our compassionate telemedicine platform. 
+                        Connect with certified doctors instantly through secure video consultations.
+                    </p>
+                    <div class="hero-stats row text-center mb-4">
+                        <div class="col-4">
+                            <div class="stat-card pulse-animation">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Available</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-card pulse-animation" style="animation-delay: 0.2s;">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Doctors</div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-card pulse-animation" style="animation-delay: 0.4s;">
+                                <div class="stat-number">10k+</div>
+                                <div class="stat-label">Patients</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-actions d-flex flex-wrap gap-3">
+                        <a href="{{ url_for('register_page') }}" class="btn btn-light btn-lg">
+                            <i class="fas fa-user-plus me-2"></i>Start Your Journey
+                        </a>
+                        <a href="#features" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-play-circle me-2"></i>Learn More
+                        </a>
+                    </div>
+                    <div class="medical-badge mt-4">
+                        <i class="fas fa-shield-alt"></i>
+                        HIPAA Compliant & ISO Certified
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center slide-up">
+                <div class="hero-image">
+                    <div class="floating-icons">
+                        <i class="fas fa-heartbeat fa-3x text-white opacity-75" style="position: absolute; top: 10%; left: 20%; animation: float 3s ease-in-out infinite;"></i>
+                        <i class="fas fa-stethoscope fa-2x" style="position: absolute; top: 60%; right: 10%; color: var(--healing-green); animation: float 3s ease-in-out infinite reverse;"></i>
+                        <i class="fas fa-user-md fa-2x text-white opacity-75" style="position: absolute; bottom: 20%; left: 10%; animation: float 3s ease-in-out infinite;"></i>
+                    </div>
+                    <div class="hero-illustration text-center">
+                        <i class="fas fa-laptop-medical" style="font-size: 12rem; color: rgba(255, 255, 255, 0.9);"></i>
+                        <h3 class="text-white mt-3">Secure Telemedicine Platform</h3>
+                        <p class="text-white opacity-75">Bringing healthcare to your fingertips</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="features" class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5 fade-in">
+            <h2 class="display-5 fw-bold text-primary mb-3">Why Choose Vaidhya-vani?</h2>
+            <p class="lead text-muted">Experience healthcare reimagined with cutting-edge technology and human compassion</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card slide-up">
+                    <div class="feature-icon icon-video mx-auto">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h5 class="mb-3">HD Video Consultations</h5>
+                    <p class="text-muted">Crystal clear video calls with doctors using advanced WebRTC technology for seamless communication and accurate diagnosis.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card slide-up" style="animation-delay: 0.1s;">
+                    <div class="feature-icon icon-security mx-auto">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h5 class="mb-3">Secure & Private</h5>
+                    <p class="text-muted">End-to-end encrypted communications ensuring your privacy and data security with HIPAA compliance and advanced security protocols.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card slide-up" style="animation-delay: 0.2s;">
+                    <div class="feature-icon icon-time mx-auto">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h5 class="mb-3">24/7 Availability</h5>
+                    <p class="text-muted">Access healthcare professionals round the clock for urgent medical needs and consultations, because health doesn't wait.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card slide-up" style="animation-delay: 0.3s;">
+                    <div class="feature-icon icon-prescription mx-auto">
+                        <i class="fas fa-prescription-bottle-alt"></i>
+                    </div>
+                    <h5 class="mb-3">Digital Prescriptions</h5>
+                    <p class="text-muted">Receive digital prescriptions instantly and maintain a complete medical history record for better healthcare management.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card slide-up" style="animation-delay: 0.4s;">
+                    <div class="feature-icon icon-specialist mx-auto">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h5 class="mb-3">Specialist Care</h5>
+                    <p class="text-muted">Connect with specialists across various medical fields for expert consultation and treatment from certified professionals.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card slide-up" style="animation-delay: 0.5s;">
+                    <div class="feature-icon icon-mobile mx-auto">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h5 class="mb-3">Mobile Friendly</h5>
+                    <p class="text-muted">Access healthcare from any device - desktop, tablet, or mobile phone with our responsive and intuitive design.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 fade-in">
+                <h2 class="display-6 fw-bold mb-4 text-primary">How Vaidhya-vani Works</h2>
+                <p class="lead text-muted mb-4">Simple, secure, and effective healthcare in just three steps</p>
+                
+                <div class="step-container mb-4">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h5>Create Your Profile</h5>
+                        <p class="text-muted">Register as a patient or healthcare provider with secure authentication and verification process.</p>
+                    </div>
+                </div>
+                
+                <div class="step-container mb-4">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h5>Find Your Doctor</h5>
+                        <p class="text-muted">Browse available doctors by specialty, experience, and ratings to find the perfect match for your needs.</p>
+                    </div>
+                </div>
+                
+                <div class="step-container mb-4">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h5>Start Consultation</h5>
+                        <p class="text-muted">Join secure video calls with chat functionality and receive professional medical advice and prescriptions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center slide-up">
+                <div class="position-relative">
+                    <i class="fas fa-heartbeat fa-8x text-primary opacity-25 position-absolute" style="top: 50%; left: 50%; transform: translate(-50%, -50%);"></i>
+                    <div class="medical-illustration">
+                        <i class="fas fa-laptop-medical fa-6x text-primary mb-3"></i>
+                        <h4 class="text-primary">Professional Healthcare</h4>
+                        <p class="text-muted">Licensed medical professionals ready to serve you with compassion and expertise</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-healing-gradient text-white">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 mx-auto text-center fade-in">
+                <i class="fas fa-hands-helping fa-4x mb-4 opacity-75"></i>
+                <h2 class="display-6 mb-4">Ready to Experience Better Healthcare?</h2>
+                <p class="lead mb-4 opacity-90">
+                    Join thousands of patients and healthcare providers who trust Vaidhya-vani for secure, 
+                    efficient, and compassionate telemedicine solutions.
+                </p>
+                <div class="d-grid gap-3 d-md-flex justify-content-md-center">
+                    <a href="{{ url_for('register_page') }}" class="btn btn-light btn-lg">
+                        <i class="fas fa-user-plus me-2"></i>Join Vaidhya-vani
+                    </a>
+                    <a href="{{ url_for('login_page') }}" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-sign-in-alt me-2"></i>Sign In
+                    </a>
+                </div>
+                <div class="mt-4">
+                    <small class="opacity-75">
+                        <i class="fas fa-lock me-1"></i>
+                        Secure • <i class="fas fa-shield-alt me-1"></i>HIPAA Compliant • 
+                        <i class="fas fa-clock me-1"></i>24/7 Support
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.floating-icons {
+    position: relative;
+    height: 400px;
+}
+</style>
+{% endblock %}

@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+{% block title %}Register - Dial-A-Doc{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center py-5">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-5">
+                    <div class="text-center mb-4">
+                        <i class="fas fa-user-plus fa-3x text-primary mb-3"></i>
+                        <h3 class="card-title">Create Account</h3>
+                        <p class="text-muted">Join Dial-A-Doc today</p>
+                    </div>
+                    <form id="registerForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Username *</label>
+                                    <input type="text" class="form-control" id="username" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email *</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password *</label>
+                                    <input type="password" class="form-control" id="password" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label">Confirm Password *</label>
+                                    <input type="password" class="form-control" id="confirmPassword" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" id="fullName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="userType" class="form-label">I am a *</label>
+                            <select class="form-select" id="userType" required>
+                                <option value="">Select...</option>
+                                <option value="patient">Patient</option>
+                                <option value="doctor">Doctor</option>
+                            </select>
+                        </div>
+                        <div id="doctorFields" style="display: none;">
+                            <div class="mb-3">
+                                <label for="specialty" class="form-label">Specialization</label>
+                                <select class="form-select" id="specialty">
+                                    <option value="">Select...</option>
+                                    <option value="General Medicine">General Medicine</option>
+                                    <option value="Cardiology">Cardiology</option>
+                                    <option value="Dermatology">Dermatology</option>
+                                    <option value="Pediatrics">Pediatrics</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="patientFields" style="display: none;">
+                            <div class="mb-3">
+                                <label for="gender" class="form-label">Gender</label>
+                                <select class="form-select" id="gender">
+                                    <option value="">Select...</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">
+                            <i class="fas fa-user-plus me-2"></i>Create Account
+                        </button>
+                    </form>
+                    <div class="text-center mt-3">
+                        <p>Already have an account? <a href="{{ url_for('login_page') }}" class="text-decoration-none">Login here</a></p>
+                    </div>
+                    <div id="registerMessage" class="mt-3"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+document.getElementById('userType').addEventListener('change', function() {
+    const userType = this.value;
+    document.getElementById('doctorFields').style.display = userType === 'doctor' ? 'block' : 'none';
+    document.getElementById('patientFields').style.display = userType === 'patient' ? 'block' : 'none';
+});
+document.getElementById('registerForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+    if (password !== confirmPassword) {
+        document.getElementById('registerMessage').innerHTML = 
+            `<div class="alert alert-danger">Passwords do not match!</div>`;
+        return;
+    }
+    const formData = {
+        username: document.getElementById('username').value,
+        email: document.getElementById('email').value,
+        password: password,
+        full_name: document.getElementById('fullName').value,
+        phone: document.getElementById('phone').value,
+        user_type: document.getElementById('userType').value
+    };
+    if (formData.user_type === 'doctor') {
+        formData.specialty = document.getElementById('specialty').value;
+    } else if (formData.user_type === 'patient') {
+        formData.gender = document.getElementById('gender').value;
+    }
+    try {
+        const response = await fetch('/api/register', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(formData),
+        });
+        const data = await response.json();
+        if (response.ok) {
+            document.getElementById('registerMessage').innerHTML = 
+                `<div class="alert alert-success">Registration successful! <a href="/login">Login here</a></div>`;
+            document.getElementById('registerForm').reset();
+        } else {
+            document.getElementById('registerMessage').innerHTML = 
+                `<div class="alert alert-danger">${data.error}</div>`;
+        }
+    } catch (error) {
+        document.getElementById('registerMessage').innerHTML = 
+            `<div class="alert alert-danger">Registration failed. Please try again.</div>`;
+    }
+});
+</script>
+{% endblock %}

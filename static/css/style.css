@@ -1,0 +1,727 @@
+:root {
+    /* Custom Vaidhya-vani Color Palette */
+    --primary-color: #2E86AB;
+    --primary-dark: #1F5F85;
+    --secondary-color: #A23B72;
+    --accent-color: #F18F01;
+    --success-color: #28A745;
+    --danger-color: #DC3545;
+    --warning-color: #FFC107;
+    --info-color: #17A2B8;
+    
+    /* Custom Background and Button Colors */
+    --background-color: #fdf1ec;
+    --button-color: #f9cfdc;
+    --button-hover: #f5b7cc;
+    --button-text: #2C3E50;
+    
+    --light-color: #F8F9FA;
+    --dark-color: #212529;
+    --healing-green: #4ECDC4;
+    --calm-blue: #45B7D1;
+    --warm-orange: #F39C12;
+    --soft-purple: #9B59B6;
+    --medical-white: #FFFFFF;
+    --text-primary: #2C3E50;
+    --text-secondary: #7F8C8D;
+    
+    /* Card and section backgrounds */
+    --card-background: #ffffff;
+    --section-background: #faf6f2;
+}
+
+/* Typography */
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Gradients - Updated with new colors */
+.bg-primary-gradient {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--healing-green) 100%);
+}
+
+.bg-secondary-gradient {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--soft-purple) 100%);
+}
+
+.bg-dark-gradient {
+    background: linear-gradient(135deg, var(--dark-color) 0%, #2C3E50 100%);
+}
+
+.bg-healing-gradient {
+    background: linear-gradient(135deg, var(--healing-green) 0%, var(--calm-blue) 100%);
+}
+
+.bg-light {
+    background-color: var(--section-background) !important;
+}
+
+/* Navigation */
+.navbar-brand {
+    font-size: 1.2rem;
+}
+
+.brand-icon {
+    font-size: 1.5rem;
+    color: var(--healing-green);
+}
+
+.brand-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+}
+
+.brand-tagline {
+    font-size: 0.7rem;
+    color: var(--healing-green);
+    font-weight: 300;
+    margin-top: -2px;
+}
+
+.user-info {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 0.5rem 1rem;
+    backdrop-filter: blur(10px);
+}
+
+.user-avatar {
+    color: var(--healing-green);
+}
+
+.user-name {
+    font-weight: 500;
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+.user-type {
+    color: var(--healing-green);
+    font-size: 0.75rem;
+}
+
+.nav-item-custom {
+    border-radius: 0.5rem;
+    margin: 0 0.2rem;
+    transition: all 0.3s ease;
+}
+
+.nav-item-custom:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 85vh;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--healing-green) 50%, var(--calm-blue) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.05)" points="0,1000 1000,800 1000,1000"/><polygon fill="rgba(255,255,255,0.03)" points="0,800 1000,600 1000,800 0,1000"/></svg>');
+    background-size: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    background: var(--card-background);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--healing-green));
+    color: white;
+    border-radius: 1rem 1rem 0 0 !important;
+    border: none;
+    padding: 1.25rem;
+}
+
+/* Feature Cards */
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    height: 100%;
+    border-radius: 1rem;
+    background: var(--card-background);
+    border: 1px solid rgba(78, 205, 196, 0.2);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    border-color: var(--healing-green);
+    box-shadow: 0 10px 40px rgba(78, 205, 196, 0.15);
+}
+
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    border-radius: 50%;
+    opacity: 0.1;
+    transform: scale(0);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon::before {
+    transform: scale(3);
+}
+
+.feature-icon.icon-video {
+    background: linear-gradient(135deg, var(--primary-color), var(--calm-blue));
+}
+
+.feature-icon.icon-security {
+    background: linear-gradient(135deg, var(--success-color), var(--healing-green));
+}
+
+.feature-icon.icon-time {
+    background: linear-gradient(135deg, var(--info-color), var(--calm-blue));
+}
+
+.feature-icon.icon-prescription {
+    background: linear-gradient(135deg, var(--warning-color), var(--warm-orange));
+}
+
+.feature-icon.icon-specialist {
+    background: linear-gradient(135deg, var(--danger-color), var(--secondary-color));
+}
+
+.feature-icon.icon-mobile {
+    background: linear-gradient(135deg, var(--soft-purple), var(--secondary-color));
+}
+
+/* Buttons - Updated with custom colors */
+.btn {
+    border-radius: 0.75rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.3s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+/* Custom Button Colors */
+.btn-primary {
+    background-color: var(--button-color);
+    color: var(--button-text);
+    border: 2px solid var(--button-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--button-hover);
+    border-color: var(--button-hover);
+    color: var(--button-text);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(249, 207, 220, 0.4);
+}
+
+.btn-secondary {
+    background-color: var(--button-color);
+    color: var(--button-text);
+    border: 2px solid var(--button-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--button-hover);
+    border-color: var(--button-hover);
+    color: var(--button-text);
+}
+
+.btn-success {
+    background-color: var(--button-color);
+    color: var(--button-text);
+    border: 2px solid var(--success-color);
+}
+
+.btn-success:hover {
+    background-color: var(--button-hover);
+    border-color: var(--success-color);
+    color: var(--button-text);
+}
+
+.btn-outline-light {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: white;
+    background: transparent;
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+.btn-light {
+    background-color: var(--button-color);
+    color: var(--button-text);
+    border: 2px solid var(--button-color);
+}
+
+.btn-light:hover {
+    background-color: var(--button-hover);
+    border-color: var(--button-hover);
+    color: var(--button-text);
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* Forms */
+.form-control, .form-select {
+    border-radius: 0.75rem;
+    border: 2px solid #E9ECEF;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+    background: var(--card-background);
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--healing-green);
+    box-shadow: 0 0 0 0.2rem rgba(78, 205, 196, 0.25);
+    transform: translateY(-1px);
+    background: var(--card-background);
+}
+
+.input-group-text {
+    background: linear-gradient(135deg, var(--primary-color), var(--healing-green));
+    color: white;
+    border: none;
+    border-radius: 0.75rem 0 0 0.75rem;
+}
+
+/* Alerts */
+.custom-alert {
+    border-radius: 0.75rem;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: var(--card-background);
+}
+
+.alert-success {
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.1), rgba(78, 205, 196, 0.1));
+    color: var(--success-color);
+    border-left: 4px solid var(--success-color);
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.1), rgba(255, 107, 107, 0.1));
+    color: var(--danger-color);
+    border-left: 4px solid var(--danger-color);
+}
+
+/* Statistics */
+.stat-card {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--card-background);
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--healing-green);
+    line-height: 1;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* How it Works Section */
+.step-container {
+    position: relative;
+    padding-left: 4rem;
+}
+
+.step-number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: var(--button-color);
+    color: var(--button-text);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(249, 207, 220, 0.3);
+    border: 2px solid var(--button-hover);
+}
+
+.step-content h5 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Video Consultation */
+.video-container {
+    background: #000;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+#remoteVideo, #localVideo {
+    border-radius: 0.5rem;
+}
+
+.consultation-controls {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 2rem;
+    padding: 1rem;
+}
+
+/* Chat */
+.chat-container {
+    background: linear-gradient(135deg, var(--background-color), var(--card-background));
+    border-radius: 1rem;
+    height: 100%;
+}
+
+.chat-message {
+    background: var(--card-background);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.chat-message.own {
+    background: var(--button-color);
+    color: var(--button-text);
+    margin-left: 2rem;
+}
+
+.chat-message.other {
+    background: var(--card-background);
+    margin-right: 2rem;
+    border-left: 4px solid var(--healing-green);
+}
+
+/* Footer */
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--healing-green);
+    transform: translateY(-3px);
+}
+
+.emergency-contact {
+    background: rgba(255, 193, 7, 0.1);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border-left: 4px solid var(--warning-color);
+}
+
+/* Container and Section Backgrounds */
+.container, .container-fluid {
+    background: transparent;
+}
+
+section {
+    background: transparent;
+}
+
+/* Modal Updates */
+.modal-content {
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    background: var(--card-background);
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+    border-radius: 1rem 1rem 0 0;
+    background: var(--card-background);
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+    border-radius: 0 0 1rem 1rem;
+    background: var(--card-background);
+}
+
+.modal-body {
+    background: var(--card-background);
+}
+
+/* Input Groups */
+.input-group .form-control {
+    background: var(--card-background);
+}
+
+.input-group .form-control:focus {
+    background: var(--card-background);
+}
+
+/* Dropdown Menus */
+.dropdown-menu {
+    background: var(--card-background);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.75rem;
+}
+
+.dropdown-item:hover {
+    background: var(--button-color);
+    color: var(--button-text);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 70vh;
+        text-align: center;
+    }
+    
+    .brand-name {
+        font-size: 1.2rem;
+    }
+    
+    .brand-tagline {
+        font-size: 0.65rem;
+    }
+    
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .step-container {
+        padding-left: 3rem;
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+/* Loading Animation */
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Fade In Animation */
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Slide Up Animation */
+.slide-up {
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from { 
+        transform: translateY(50px); 
+        opacity: 0; 
+    }
+    to { 
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+}
+
+/* Medical Professional Badge */
+.medical-badge {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--healing-green), var(--calm-blue));
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.medical-badge i {
+    margin-right: 0.5rem;
+}
+
+/* Status Indicators */
+.status-online {
+    color: var(--healing-green);
+}
+
+.status-available {
+    color: var(--success-color);
+}
+
+.status-busy {
+    color: var(--warning-color);
+}
+
+.status-offline {
+    color: var(--text-secondary);
+}
+
+/* Consultation Status */
+.consultation-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.consultation-status.active {
+    background: rgba(40, 167, 69, 0.1);
+    color: var(--success-color);
+}
+
+.consultation-status.pending {
+    background: rgba(255, 193, 7, 0.1);
+    color: var(--warning-color);
+}
+
+.consultation-status.completed {
+    background: rgba(108, 117, 125, 0.1);
+    color: var(--text-secondary);
+}
+
+/* Badge Updates */
+.badge {
+    background-color: var(--button-color) !important;
+    color: var(--button-text) !important;
+}
+
+.badge.bg-primary {
+    background-color: var(--button-color) !important;
+}
+
+.badge.bg-success {
+    background-color: var(--success-color) !important;
+    color: white !important;
+}
+
+.badge.bg-warning {
+    background-color: var(--warning-color) !important;
+    color: var(--button-text) !important;
+}
+
+/* Print Styles */
+@media print {
+    .navbar, .footer, .btn, .modal {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+    }
+    
+    .card {
+        border: 1px solid #ddd !important;
+        box-shadow: none !important;
+    }
+}
