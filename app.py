@@ -548,7 +548,7 @@ def internal_error(error):
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-        logger.info("Database tables created successfully!")
+        logger.info("✅Database tables created successfully!")
     
     print("🏥 Starting Vaidhya-vani - Voice of Healing")
     print("🚀 Server available at: http://localhost:5000")
